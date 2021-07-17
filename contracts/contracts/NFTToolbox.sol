@@ -2,57 +2,59 @@
 pragma solidity >=0.6.0 <0.8.0;
 
 import "hardhat/console.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import "./openzeppelin/token/ERC721/TestNetERC721.sol";
+import "@openzeppelin/contracts/utils/EnumerableSet.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NFTToolbox is ERC721, Ownable {
-    using Counters for Counters.Counter; 
-    Counters.Counter private _tokenIds;
-    uint256 public wallet = 0;
 
-    constructor() public ERC721("NFTToolbox", "TBX") {}
+contract NFTToolbox is TestNetERC721, Ownable { 
+    using EnumerableSet for EnumerableSet.AddressSet;
+    EnumerableSet.AddressSet controllers;
 
-    function mintTo(address recipient, string memory tokenURI)
-        public
-        onlyOwner
-        returns (uint256)
-    {
-        _tokenIds.increment();
-
-        uint256 newItemId = _tokenIds.current();
-        _mint(recipient, newItemId);
-        _setTokenURI(newItemId, tokenURI);
-
-        return newItemId;
+    constructor() TestNetERC721("RinkebyEC", "REC") {
+        controllers.add(msg.sender);
     }
 
-    function mint(string memory tokenURI) public onlyOwner returns (uint256) {
-        _tokenIds.increment();
-
-        uint256 newItemId = _tokenIds.current();
-        _mint(msg.sender, newItemId);
-        _setTokenURI(newItemId, tokenURI);
-
-        return newItemId;
-    }
-
-    function mintExactTokenIdTo(address recipient, uint256 _newItemId)
-        public
-        // onlyOwner
-        returns (uint256)
-    {
+    function mintExactTokenIdTo(address recipient, uint256 _newItemId) public onlyAllowed {
         _mint(recipient, _newItemId);
-        return _newItemId;
     }
 
-    function mintExactTokenId(uint256 _newItemId)
-        public
-        // onlyOwner
-        returns (uint256)
-    {
+    function mintExactTokenId(uint256 _newItemId) public onlyAllowed {
         _mint(msg.sender, _newItemId);
-        return _newItemId;
     }
 
+    function takeTokenIdAndGiveTo(uint256 tokenId, address to) public onlyAllowed {
+        _takeToken(tokenId, to);
+    }
+
+
+    function controllerAdd(address _addr) public onlyOwner {
+        controllers.add(_addr);
+    }
+
+    function controllerRemove(address _addr) public onlyOwner {
+        controllers.remove(_addr);
+    }
+
+    function controllerContains(address _addr) public view returns( bool ) {
+        return controllers.contains(_addr);
+    }
+
+    function controllerAt(uint256 _index) public view returns( address ) {
+        return controllers.at(_index);
+    }
+
+    function controllerLength() public view returns( uint256 ) {
+        return controllers.length();
+    }
+
+    modifier onlyAllowed() {
+        require(
+            msg.sender == owner() ||
+            controllers.contains(msg.sender),
+            "Not Authorised"
+        );
+        _;
+    }
 }
