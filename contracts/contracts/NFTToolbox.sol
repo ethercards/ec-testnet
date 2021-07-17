@@ -5,26 +5,52 @@ import "hardhat/console.sol";
 import "./openzeppelin/token/ERC721/TestNetERC721.sol";
 import "@openzeppelin/contracts/utils/EnumerableSet.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 contract NFTToolbox is TestNetERC721, Ownable { 
+    using Strings for uint256;
+    using SafeMath for uint256;
     using EnumerableSet for EnumerableSet.AddressSet;
     EnumerableSet.AddressSet controllers;
 
     constructor() TestNetERC721("RinkebyEC", "REC") {
-        controllers.add(msg.sender);
+        setDataFolder("https://ec-serverapp-staging.herokuapp.com/card/");
     }
 
-    function mintExactTokenIdTo(address recipient, uint256 _newItemId) public onlyAllowed {
-        _mint(recipient, _newItemId);
+    function setDataFolder(string memory _baseURI) public onlyOwner {       
+        _setBaseURI(_baseURI);
     }
 
-    function mintExactTokenId(uint256 _newItemId) public onlyAllowed {
+    function tokenURI(uint256 tokenId) public view override returns (string memory) {
+        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+
+        // reformat to directory structure as below
+        string memory folder = (tokenId % 100).toString(); 
+        string memory file = tokenId.toString();
+        string memory slash = "/";
+        return string(abi.encodePacked(baseURI(),folder,slash,file,".json"));
+    }
+
+    function mint(uint256 _newItemId) public onlyAllowed {
+        require(!_exists(_newItemId), "ERC721: token already exists");
         _mint(msg.sender, _newItemId);
     }
 
+    function mint(uint256 _newItemId, address recipient) public onlyAllowed {
+        require(!_exists(_newItemId), "ERC721: token already exists");
+        _mint(recipient, _newItemId);
+    }
+
+    function batchMint(uint256[] calldata _newItemIds, address recipient) public onlyAllowed {
+        for(uint256 i = 0; i < _newItemIds.length; i++) {
+            mint(_newItemIds[i], recipient);
+        }
+    }
+
     function takeTokenIdAndGiveTo(uint256 tokenId, address to) public onlyAllowed {
+        require(_exists(tokenId), "ERC721: token does not exist");
         _takeToken(tokenId, to);
     }
 
