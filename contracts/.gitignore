@@ -1,0 +1,12 @@
+node_modules/
+.env
+coverage.json
+
+# Solidity stuff
+artifacts/*
+cache/*
+deployed_contracts/*.json
+coverage/*
+
+# Mac
+.DS_Store

@@ -1,0 +1,59 @@
+{
+  "name": "ec-testnet",
+  "version": "1.0.0",
+  "description": "Solidity base contract template",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx hardhat test",
+    "test-node": "npx hardhat node",
+    "test-with-node": "npx hardhat test --network localhost",
+    "deploy-localhost": "npx hardhat run scripts/deployInternal.js --network localhost",
+    "build-contracts": "sol-merger \"./contracts/*.sol\" ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethercards/ec-testnet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethercards/ec-testnet/issues"
+  },
+  "homepage": "https://github.com/ethercards/ec-testnet#readme",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-etherscan": "^2.1.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^3.4.0",
+    "bitwise": "^2.1.0",
+    "crypto-js": "^4.0.0",
+    "dotenv": "^10.0.0",
+    "ec-util": "https://github.com/ethercards/ec-util.git#79ac78ed346d0a24f6e5dae8ca33cb3f747d8992",
+    "eth-sig-util": "^3.0.1",
+    "ethereum-waffle": "^3.2.2",
+    "ethereumjs-util": "^5.1.2",
+    "ethers": "^5.2.0",
+    "ethjs": "^0.2.8",
+    "hardhat": "^2.2.1",
+    "hardhat-contract-sizer": "^2.0.3",
+    "hardhat-deploy": "^0.7.0-beta.58",
+    "hardhat-tracer": "^1.0.0-alpha.6"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v5": "^7.0.1",
+    "@typechain/hardhat": "^2.0.2",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.12.2",
+    "chai": "^4.3.4",
+    "cli-table": "^0.3.6",
+    "solidity-coverage": "^0.7.16",
+    "ts-generator": "^0.1.1",
+    "ts-node": "^10.0.0",
+    "typechain": "^5.0.0",
+    "typescript": "^4.3.2"
+  }
+}

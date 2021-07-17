@@ -1,0 +1,112 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "data",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_tokenId",
+						"type": "uint16"
+					}
+				],
+				"name": "getValue",
+				"outputs": [
+					{
+						"internalType": "uint8[]",
+						"name": "",
+						"type": "uint8[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_tokenId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint8[]",
+						"name": "_value",
+						"type": "uint8[]"
+					}
+				],
+				"name": "setValue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Volumes/Dev/ec/dev/ec-forge-v1/contracts/test/data.sol": "Data"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Volumes/Dev/ec/dev/ec-forge-v1/contracts/test/data.sol": {
+			"keccak256": "0xfbdc0161becc6f41708ecf7298833c6299197f87c199231ea23949aa6004ea8b",
+			"license": "Unlicensed",
+			"urls": [
+				"bzz-raw://517d9fd3a43519afbd94918e997527f1b99d320953261067d8edae3b03b8d50b",
+				"dweb:/ipfs/QmRzpptX34ZtfNAhnokwaP14bcUbstGYAa6vibpZZzKCMr"
+			]
+		}
+	},
+	"version": 1
+}
