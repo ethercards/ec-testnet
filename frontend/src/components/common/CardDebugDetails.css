@@ -1,0 +1,28 @@
+.description .lnk {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border-radius: .4em;
+    margin-right: .4em;
+    padding: .2rem;
+    pointer-events: all;
+    text-align: center;
+}
+
+.description .lnk img{
+    position: relative;
+    max-height: 48px;
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+    object-position: center;
+    transition: none;
+    margin-top: 3px;
+}
+.lnk img:hover{
+    transform: none;
+}
+
+.description .lnk.opensea, .description .lnk.etherscan{
+    background:#333;
+}

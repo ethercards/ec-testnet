@@ -1,0 +1,15 @@
+.address {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.address span {
+    font-weight: 200;
+}
+
+.address .identicon {
+    display:inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 5px;
+}

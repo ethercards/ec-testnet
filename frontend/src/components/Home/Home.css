@@ -1,0 +1,335 @@
+
+.home{
+    padding-top: 80px;
+}
+
+#walletContainer {
+    padding-top: 20px;
+}
+
+.nft-card{
+    position:relative;
+    overflow:hidden;
+    border-radius: 1em;
+    margin-bottom: 1.5em;
+    width:100%;
+    padding-top: 134.72%;
+    background:#445;
+    color:white;
+    box-shadow: 0 5px 2px #000;
+}
+
+.nft-card img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.nft-card img:hover{
+    transform: scale(1.05);
+}
+.nft-card .nft-type{
+    position: absolute;
+    z-index: 1;
+    top:5%;
+    left: 5%;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    border-radius: 0.6rem;
+    padding: 0.6em;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.nft-card .info-panel{
+    width:100%;
+    height:45%;
+    position: absolute;
+    left: 0;
+    bottom: -65%;
+    background: rgba(0,0,0,0.7);
+    pointer-events: none;
+    z-index: 1;
+    transition: bottom 0.4s ease-out;
+}
+
+.nft-card:hover .info-panel{
+    bottom: -1px;
+}
+
+
+
+.info-panel .link-panel {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+}
+
+.info-panel .link-panel .lnk{
+    display: inline-block;
+    width:2em;
+    height: 2em;
+    border-radius: 0.4em;
+    margin-right: 0.4em;
+    padding:0.2rem;
+    pointer-events:all;
+}
+
+.lnk.opensea{
+    background:#3f6ed3;
+}
+.lnk.etherscan{
+    background:#fff;
+}
+
+.info-panel .link-panel .lnk img{
+    position: relative;
+    max-height: 48px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: none;
+}
+
+.lnk img:hover{
+    transform: none;
+}
+
+.info-panel .avatar{
+    padding:0;
+}
+
+.info-panel .avatar img {
+    width: 100%;
+    object-fit: contain;
+    object-position: top;
+}
+
+.info-panel .details{
+    padding-top: 0.7rem;
+}
+
+.info-panel h5 {
+    font-size: 1em;
+    color: #be1fda;
+    margin-bottom: 0.15em;
+}
+
+.info-panel p {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.2em;
+    max-height: 2.8em;
+    display: block;
+    overflow: hidden;
+}
+
+.info-panel .gray-text{
+    color:#aaa;
+}
+
+.filters {
+    position: fixed;
+    top:80px;
+    left:0;
+    right: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.filters .content{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.7);
+}
+
+.filter-item{
+    text-align: center;
+    align-self: center;
+    height: min-content;
+    width: 25%;
+    font-size: 1rem;
+}
+
+
+.filter-item h5{
+    font-size:1em;
+    color:#333;
+    margin-bottom: 0.5em;
+    margin-top: 0.2em;
+}
+.filter-item .selected-option{
+    font-size:1em;
+    color:#be1fda;
+    position: relative;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.filter-item .selected-option .dropdown{
+    display:none;
+    position: absolute;
+    width:100%;
+    padding-top: 1.5rem;
+}
+
+.dropdown .dd-container{
+    max-height: 45vh;
+    overflow: auto;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.7);
+    padding:1rem;
+}
+
+.filter-item .selected-option:hover .dropdown{
+    display:block;
+}
+
+.dd-container ul{
+    list-style: none;
+    padding: 0;
+    margin:0;  
+    text-align: left;  
+}
+
+.dd-container ul li{
+    color:#333;
+    cursor:pointer;
+    font-size: 1em;
+}
+
+.dd-container ul li:hover{
+    color:#be1fda;
+}
+
+
+.id-filter {
+    padding: 0.2rem 0 0.2rem 0.2rem;
+    background-color: #E4E1E1;
+    border-radius: 0.75rem;
+    margin-left: auto;
+}
+
+.id-filter input, .id-filter input:focus{
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color:#333;
+    width: 75%;
+    padding-left: 5px;
+}
+
+.id-filter button{
+
+    background:#be1fda;
+    border:none;
+    width:2.5rem;
+    height:2.5rem;
+    border-radius: 0.65rem;
+    color: white;
+    outline: none;
+}
+
+.id-filter button img{
+    width:60%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+
+.filters .btn-outline.btn-peach{
+    padding-top:0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.back-top{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    background: #be1fda;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 2.7rem;
+    z-index: 12;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+
+/****** Explorer *******/
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px)
+{
+    .info-panel {
+       font-size:0.8rem;
+    }
+}
+
+@media (max-width: 992px)
+{
+    .info-panel {
+       font-size:0.7rem;
+       height:65%;
+    }
+
+    .info-panel .details{
+        padding-top: 0.4rem;
+    }
+
+ 
+
+}
+
+@media (max-width: 768px)
+{
+   
+    .filters {
+       position: relative;
+       top: 0;
+    }
+
+    .info-panel {
+        font-size:2rem;
+        height:65%;
+     }
+
+     .info-panel .details{
+        padding-top: 1rem;
+    }
+
+    .filter-item {
+        font-size: 0.7rem;
+    }
+
+    .filter-item .selected-option .dropdown {
+        width: 220%;
+        left:0;
+    }
+   
+
+}

@@ -1,0 +1,126 @@
+.filters {
+    position: inherit;
+    width: 100%;
+}
+
+.filters .content {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.7);
+}
+
+.filter-item{
+    text-align: center;
+    align-self: center;
+    height: min-content;
+    width: 30%;
+    font-size: 1rem;
+}
+
+.filter-item h5{
+    font-size:1em;
+    color:#333;
+    margin-bottom: 0.5em;
+    margin-top: 0.2em;
+}
+.filter-item .selected-option{
+    font-size:1em;
+    color:#be1fda;
+    position: relative;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.filter-item .selected-option .dropdown{
+    display:none;
+    position: absolute;
+    width:100%;
+    padding-top: 1.5rem;
+}
+
+.dropdown .dd-container{
+    max-height: 45vh;
+    overflow: auto;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.7);
+    padding:1rem;
+}
+
+.filter-item .selected-option:hover .dropdown{
+    display:block;
+}
+
+.dd-container ul{
+    list-style: none;
+    padding: 0;
+    margin:0;  
+    text-align: left;  
+}
+
+.dd-container ul li{
+    color:#333;
+    cursor:pointer;
+    font-size: 1em;
+}
+
+.dd-container ul li:hover{
+    color:#be1fda;
+}
+
+
+.id-filter {
+    padding: 0.2rem 0 0.2rem 0.2rem;
+    background-color: #E4E1E1;
+    border-radius: 0.75rem;
+    margin-left: auto;
+}
+
+.id-filter input, .id-filter input:focus{
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color:#333;
+    width: 75%;
+    padding-left: 5px;
+}
+
+.id-filter button{
+
+    background:#be1fda;
+    border:none;
+    width:2.5rem;
+    height:2.5rem;
+    border-radius: 0.65rem;
+    color: white;
+    outline: none;
+}
+
+.id-filter button img{
+    width:60%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.filters .btn-outline.btn-peach{
+    padding-top:0.3rem;
+    padding-bottom: 0.3rem;
+}
+.queue .title {
+    margin-top: 0.1rem;
+    font-size: 1.5rem;
+}
+
+.queue .selectedId {
+    padding: 0 1em;
+    background-color: #be1fda;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    color: #FFF;
+    float: left;
+}
+
+.queue .selectedId:hover {
+    background-color: red;
+}

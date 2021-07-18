@@ -1,0 +1,455 @@
+.nft-token {
+    background:none;  
+    width:100%;
+    padding-top:137.2%;
+    position: relative;
+    z-index:0;
+    
+}
+.front-face{
+    font-size: 1rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+   /*  border-radius: 0.5rem; */
+    border-radius: 1em;
+    perspective: 35cm;
+    transform-style: preserve-3d;
+    border: solid 2px rgba(255,255,255,0.3);
+    border-bottom-color: rgba(0,0,0,0.3);
+    border-right-color:rgba(0,0,0,0.3);
+}
+
+.video-container{
+    opacity:0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.video-container.playing {
+    opacity: 1;
+}
+
+
+.token-image {
+    background-color:#333;
+    position:absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:5;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+.token-image:hover{
+    transform: scale(1.05);
+}
+
+.token-image.no-scale:hover{
+    transform: none;
+}
+
+.token-image.sensitive img, .token-image.sensitive video{
+    filter:blur(12px) grayscale(0.5);
+}
+
+.token-image .overlay {
+    background-color:rgba(0,0,0,0.7);
+    text-align: center;
+    opacity:0;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    padding-top: 45%;
+    cursor: default;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.token-image.sensitive .overlay{
+    opacity: 1;
+    font-size: 1rem;
+}
+
+
+.token-image .overlay h5{
+    font-size: 1em;
+}
+.token-image .overlay img{
+    max-height: 64px;
+    min-height: 20px;
+    height:3%;
+    width: auto;
+    filter: none;
+    object-fit: contain;
+    display: inline-block;
+    position:relative;
+    margin-bottom: 1rem;
+}
+
+.token-image .overlay p{
+    font-size: 0.9em;
+}
+.token-image .overlay span{
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+}
+.token-image.sensitive .overlay span{
+    cursor: pointer;
+}
+
+.token-image .overlay hr{
+    border-top: solid 1px #969da3;
+    margin: 1rem 2rem;
+}
+
+
+.unresolved .token-image:hover{
+    transform: none;
+}
+
+.token-image img {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+}
+
+.token-image video {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    outline: none;
+}
+
+.card-type{
+    position: absolute;
+    z-index: 10;
+    top:3%;
+    left: 3%;
+    background-color: #000;
+    color: #fff;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 1em;
+    border-radius: 0.6rem;
+    padding: 0.5em 0.6em 0.4em 0.6em;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+
+.fullscreen-button{
+    position: absolute;
+    z-index: 10;
+    top:45%;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.4s ease-in-out;
+    pointer-events: none;
+}
+
+.fullscreen-button .fs{
+    pointer-events:visiblePainted;
+    display:inline-block;
+    width: 2.4em;
+    height: 2.4em;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border-radius: 0.35rem;
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    border-radius: 0.35rem;
+    padding: 0.6em 0.8em 0.5em 0.8em;
+    transition: opacity 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    background-position: center center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+.fullscreen-button .fs:hover{
+    background-color: #be1fda;
+}
+
+.front-face:hover .fullscreen-button {
+    opacity: 1;
+}
+
+.fullscreen-button .fs.sw{
+    background-size: 65%;
+}
+
+
+.card-traits{
+    position: absolute;
+    z-index: 10;
+    top:3%;
+    right: 3%;
+    background-color: #000;
+    color: #fff;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 1em;
+    border-radius: 0.6rem;
+    padding: 0.5em 0.6em 0.4em 0.6em;
+    cursor: pointer;
+    opacity: 1;
+    text-align: center;
+    min-width: 2.4em;
+    transition: opacity 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+.card-traits:hover, .card-type:hover{
+    background-color: #be1fda;
+}
+
+.traits-on .card-type, .traits-on .card-traits, .traits-on .fullscreen-button, .details-on .card-type, .details-on .card-traits, .details-on .fullscreen-button{
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+
+.ec-logo{
+    position: absolute;
+    width: 100%;
+    height:9%;
+    z-index: 10;
+    bottom:4%;
+    left:0;
+    text-align:right;
+    text-align: center;
+    pointer-events: none;
+}
+.ec-logo img{
+    height:100%;
+    filter: drop-shadow(0 1px 2px #000);
+}
+
+.unresolved .ec-logo{
+    display:none;
+}
+
+.trait-slide {
+    position:absolute;
+    width:88%;
+    max-height:80%;
+    transform: perspective(35cm) rotateY(90deg);
+    top: 6%;
+    right: 6%;
+    background:rgba(0,0,0,0.8);
+    border-radius: 0.5rem;
+    transform-origin: top right;
+    z-index: 11;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s ease-in-out;
+}
+
+.trait-slide .close-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+    color:white;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.close-btn img{
+    width: 16px;
+    height:16px;
+}
+
+.close-btn:hover{
+    filter: brightness(0) saturate(100) invert(23%) sepia(93%) saturate(5853%) hue-rotate(286deg) brightness(98%) contrast(93%);
+}
+
+.traits-on .trait-slide{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.trait-container{
+    position: absolute;
+    width: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+    top: 32px;
+    left: 5%;
+    bottom: 1.25rem;
+    transition: all 0.7s ease-in-out;
+}
+.trait-container::-webkit-scrollbar,
+.trait-details::-webkit-scrollbar,
+.details-content::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+    background:none;
+  }
+
+.trait-container::-webkit-scrollbar-thumb,
+.trait-details::-webkit-scrollbar-thumb,
+.details-content::-webkit-scrollbar-thumb 
+{
+   border-radius: 2px;
+    background: rgba(230, 3, 250, 0.474) !important;
+  }
+
+
+
+.trait-container.trait-selected{
+    left:-100%;
+}
+
+.trait{
+    /* width:33%;
+    height:28%;
+    float:left; */
+    margin: 0;
+    display:inline-block;
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+    transition: left .3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    left: auto;
+}
+.trait:hover{
+    filter: brightness(0) saturate(100) invert(23%) sepia(93%) saturate(5853%) hue-rotate(286deg) brightness(98%) contrast(93%);
+}
+
+.trait-details{
+    position: absolute;
+    width: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+    top: 2rem;
+    left: 100%;
+    bottom: 1.25rem;
+    transition: left 0.7s ease-in-out;
+}
+.trait-details.trait-selected{
+    left:5%;
+}
+.trait-details .trait{
+    display: inline-block;
+    float:none;
+}
+.trait-details .trait:hover{
+    filter:none;
+    cursor: default;
+}
+.trait-name{
+    font-family: teko;
+    font-size: 1.8rem;
+    line-height: 1.6rem;
+    text-transform: uppercase;
+}
+
+.details-slide {
+    position:absolute;
+    width:88%;
+    height:80%;
+    top: 6%;
+    right: 6%;
+    background:rgba(0,0,0,0.8);
+    border-radius: 0.5rem;
+    transform-origin: top left;
+    z-index: 11;
+    overflow: hidden;
+    transform:scale(0);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.details-slide .close-btn{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+    color:white;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.details-on .details-slide{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.details-content{
+    position: absolute;
+    width:92%;
+    left:4%;
+    right:4%;
+    top:10%;
+    bottom:4%;
+    font-size: 1rem;
+    overflow: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.details-content h3{
+    font-family:teko;
+    color: #fff;
+    font-size: 1.8em;
+}
+.details-content h5{
+    font-family:teko;
+    color: #ccc;
+    font-size: 1.2em;
+}
+
+.details-content p{
+    color: #ccc;
+    font-size: 1em;
+}
+
+.details-content p strong{
+    color: #fff;
+    font-weight: 600;
+}
+
+
+.c-small .details-content{
+    font-size: 0.9rem;
+    overflow-y:auto;
+}
+
+.c-xsmall .front-face{
+    font-size:0.7rem;
+}
+
+.c-xsmall .details-content{
+    font-size: 0.8rem;
+    overflow-y:auto;
+}
+
+
+.c-xsmall .token-image.sensitive .overlay{
+    font-size: 0.8rem;
+}

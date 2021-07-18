@@ -54,7 +54,6 @@ contract NFTToolbox is TestNetERC721, Ownable {
         _takeToken(tokenId, to);
     }
 
-
     function controllerAdd(address _addr) public onlyOwner {
         controllers.add(_addr);
     }

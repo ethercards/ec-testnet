@@ -1,0 +1,21 @@
+#r-img{
+    transition: all 0.5s ease-out;
+}
+
+.show-image {
+    animation: circle 1.5s ease-out;
+}
+
+.hide-image {
+    animation: circle-rev 1.5s ease-out;
+}
+
+@keyframes circle {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+@keyframes circle-rev {
+    0% { opacity:1; }
+    100% { opacity:0; }
+  }
