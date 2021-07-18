@@ -19,7 +19,7 @@
     "spinners-react": "^1.0.4",
     "styled-components": "^5.3.0",
     "web-vitals": "^0.2.4",
-    "zoom-next": "git+ssh://git@github.com/mickys/zoom-next.git#06230afcd24458f6e7d2241b5b67a4a7c8abb7ae"
+    "zoom-next": "https://github.com/mickys/zoom-next.git#06230afcd24458f6e7d2241b5b67a4a7c8abb7ae"
   },
   "scripts": {
     "predeploy": "yarn build && cp 404.html build/ && cp .nojekyll build/ && cp CNAME build/",
