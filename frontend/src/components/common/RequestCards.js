@@ -171,14 +171,19 @@ const RequestCards = (props) => {
 
     const requestSelectedTokens = async () => {
         console.log("requestSelectedTokens", requestQueueIds);
-        let contract = props.helpers.ec;
-        let signer = props.helpers.ethersProvider.getSigner();
-        let c = contract.connect(signer);
-        let tx = null;
-        tx = await c["batchMint(uint256[],address)"](requestQueueIds, props.helpers.myWalletAddress).catch(e =>{
-            toast.error(e.error.message);
-            console.log(e)
-        });
+
+        if(requestQueueIds.length > 0) {
+            let contract = props.helpers.ec;
+            let signer = props.helpers.ethersProvider.getSigner();
+            let c = contract.connect(signer);
+            let tx = null;
+            tx = await c["batchMint(uint256[],address)"](requestQueueIds, props.helpers.myWalletAddress).catch(e =>{
+                toast.error(e.error.message);
+                console.log(e)
+            });
+        } else {
+            toast.error("Please add tokens to the queue!");
+        }
     }
 
 

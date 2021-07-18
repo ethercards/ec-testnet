@@ -2,6 +2,8 @@
 
 EtherCards staging utilities
 
+0xaad4475343f5150e33d6194270f04e7e5968a2f8
+
 ## Network setup
 
 |               Type                     |                 Address                        |
@@ -24,22 +26,9 @@ EtherCards staging utilities
 
 |               Contract                 |                 Address                        |
 |:---------------------------------------|-----------------------------------------------:|
-| NFT - EtherCards Collection 1          | **0xf8470a8A1D74aC91f61681Aa07a018b47d268EE6** |
+| NFT - EtherCards Collection 1          | **0xAAD4475343f5150E33d6194270f04e7e5968A2f8** |
 | ERC20 - Dust Mock                      | **0xf8470a8A1D74aC91f61681Aa07a018b47d268EE6** |
 | Forge - Layer Swap                     | **0x7B9789cf736bD2F1ba0cfB7504668622B1a3cECb** |
 | Forge - Card Upgrade                   | **0x51046857662D0531f8f0C11B215E1a662f28eCd0** |
 | Forge - Layer Reforge / Reforge +      | **0x47981dA4e7A005a2301a552Feb6955De3b5e4425** |
-
-## Contract Metods
-
-### NFT - EtherCards Collection 1
-
-|               Name               | Access      |                Description                    |
-|:---------------------------------|-------------|----------------------------------------------:|
-| sale_is_over()                   | any         | Is sale over?                                 |
-| is_sale_on()                     | any         | Is sale on?                                   |
-| how_long_more(false)             | any         | Time till sale_start                          |
-|
-
-
 
