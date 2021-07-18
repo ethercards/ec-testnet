@@ -43,7 +43,7 @@ const CardDebugDetails = (props) => {
         if (!trait) {
            trait = traitsOfToken[index];
         }
-        const traitIcon = `${process.env.PUBLIC_URL}/traits/${trait.icon}`;
+        const traitIcon = `${process.env.PUBLIC_URL}/static/traits/${trait.icon}`;
         console.log("PUBLIC_URL", process.env.PUBLIC_URL, traitIcon);
         return (
            <img style={{ height: '18px' }}
@@ -77,16 +77,19 @@ const CardDebugDetails = (props) => {
                 <p className="m-0">Layers: <span className="text-white">{tokenMeta.layer_artists.join(', ')}</span></p>
 
                 <p className="m-0">Trait count: <span className="text-white">{traitsOfToken.length}</span></p>
+                <div className="m-0 row">
+                    <div className="col-2">Count</div>
+                    <div className="col-1">ID</div>
+                    <div className="col-1">Times</div>
+                    <div className="col-8">Name</div>
+                </div>
                 {traitsOfToken.map((trait, i) => {
                     return (
                         <div key={'trait-' + i} className="m-0 row">
-                            <div className="col-2">
-                                <div className="row">
-                                    <div className="m-0 p-0 col-9">Trait {i+1}:</div>
-                                    <div className="m-0 p-0 col-3 trait">{renderTraitIcon(trait, i)}</div>
-                                </div>
-                            </div>
-                            <div className="col-9">
+                            <div className="col-2">Trait {i+1}:</div>
+                            <div className="col-1">{i}</div>
+                            <div className="col-1">1x</div>
+                            <div className="col-8">
                                 {trait.name}
                             </div>
                         </div>

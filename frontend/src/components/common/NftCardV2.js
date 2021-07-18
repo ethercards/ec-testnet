@@ -361,7 +361,7 @@ const NftCardV2 = (props) => {
       if (!trait) {
          trait = traitsOfToken[selectedTraitIdxDetails];
       }
-      const traitIcon = `${process.env.PUBLIC_URL}/traits/${trait.icon}`;
+      const traitIcon = `${process.env.PUBLIC_URL}/static/traits/${trait.icon}`;
       return (
          <img style={{ width: '80%' }}
             src={traitIcon}

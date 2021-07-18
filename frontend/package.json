@@ -22,7 +22,7 @@
     "zoom-next": "https://github.com/mickys/zoom-next.git#06230afcd24458f6e7d2241b5b67a4a7c8abb7ae"
   },
   "scripts": {
-    "predeploy": "yarn build && cp 404.html build/ && cp .nojekyll build/ && cp CNAME build/ && cp public/traits build/",
+    "predeploy": "yarn build && cp 404.html build/ && cp .nojekyll build/ && cp CNAME build/",
     "deploy": "gh-pages -t -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
