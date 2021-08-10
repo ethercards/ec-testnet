@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { LazyImage } from '../common/LazyImage';
-import artistAvatar from '../../assets/images/nft-icons/artist-default-avatar.png';
+// import { LazyImage } from '../common/LazyImage';
+// import artistAvatar from '../../assets/images/nft-icons/artist-default-avatar.png';
 import opensea from '../../assets/images/nft-icons/icon_opensea.png';
 import etherscan from '../../assets/images/nft-icons/icon_etherscan.png';
-import PLACEHOLDER from '../../assets/images/traits/small_rplaceholder_icon.png';
+// import PLACEHOLDER from '../../assets/images/traits/small_rplaceholder_icon.png';
 import { getTokenMeta } from '../Utils';
 
 import './CardDebugDetails.css';
@@ -53,22 +53,22 @@ const CardDebugDetails = (props) => {
         // console.log("tokenMeta.id", meta.id, props.tokenTraits.traitData);
     }
 
-    const renderTraitIcon = (trait, index) => {
-        if (!trait) {
-           trait = traitsOfToken[index];
-        }
-        const traitIcon = `${process.env.PUBLIC_URL}/static/traits/${trait.icon}`;
-        // console.log("PUBLIC_URL", process.env.PUBLIC_URL, traitIcon);
-        return (
-           <img style={{ height: '18px' }}
-              src={traitIcon}
-              onError={(e) => {
-                 e.target.src = PLACEHOLDER;
-                 e.target.onerror = null;
-              }}>
-           </img>
-        )
-     }
+    // const renderTraitIcon = (trait, index) => {
+    //     if (!trait) {
+    //        trait = traitsOfToken[index];
+    //     }
+    //     const traitIcon = `${process.env.PUBLIC_URL}/static/traits/${trait.icon}`;
+    //     // console.log("PUBLIC_URL", process.env.PUBLIC_URL, traitIcon);
+    //     return (
+    //        <img style={{ height: '18px' }}
+    //           src={traitIcon}
+    //           onError={(e) => {
+    //              e.target.src = PLACEHOLDER;
+    //              e.target.onerror = null;
+    //           }}>
+    //        </img>
+    //     )
+    //  }
 
     return(<>
 
@@ -110,7 +110,7 @@ const CardDebugDetails = (props) => {
                     )
                 })}
 
-                <p className="m-0">Chain Trait count: <span className="text-white">{TokenTraits.length}</span></p>
+                <p className="m-0">Chain Trait count: <span className="text-white">{TokenTraits.traits.length}</span></p>
                 <div className="m-0 row">
                     <div className="col-2">Count</div>
                     <div className="col-1">ID</div>
