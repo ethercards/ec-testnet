@@ -20,6 +20,7 @@
     "spinners-react": "^1.0.4",
     "styled-components": "^5.3.0",
     "web-vitals": "^0.2.4",
+    "webpack": "4.44.2",
     "zoom-next": "https://github.com/mickys/zoom-next.git#d8984ac5a9b48eaf9c6ba723da1d1c2bb0b756af"
   },
   "scripts": {
