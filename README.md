@@ -19,8 +19,6 @@ EtherCards staging utilities
 |               Type                     |                 Address                        |
 |:---------------------------------------|-----------------------------------------------:|
 | Ethereum                               | https://faucet.rinkeby.io/                     |
-| NFT - EtherCards Collection 1          | https://rinkeby.burneth.com/                   |
-| ERC20 - Dust Mock                      | https://rinkeby.burneth.com/                   |
 
 ## Contracts
 
