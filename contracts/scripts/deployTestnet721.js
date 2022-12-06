@@ -1,4 +1,5 @@
 const { ZERO_ADDRESS, ROLE, Data } = require('../tests/helpers/common');
+const hre = require("hardhat");
 
 async function main() {
 
@@ -15,10 +16,16 @@ async function main() {
     await EC721.deployed();
     console.log("    RinkebyEC:      ", EC721.address);
 
-    await EC721["batchMint(uint256[],address)"]([0,1,2,3,4,5,6,7,8,9], accounts[0].address);
+    const tx = await EC721["batchMint(uint256[],address)"]([0,1,2,3,4,5,6,7,8,9], accounts[0].address);
+    await tx.wait(8);
 
     // npx hardhat verify --network rinkeby --contract contracts/NFTToolbox.sol:NFTToolbox "0xAAD4475343f5150E33d6194270f04e7e5968A2f8"
 
+    await hre.run("verify:verify", {
+        contract: "contracts/NFTToolbox.sol:NFTToolbox",
+        address: EC721.address,
+        constructorArguments: []
+    });
 }
 
 main()

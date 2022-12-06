@@ -67,6 +67,12 @@ module.exports = {
       chainId: 1,
       gasPrice: gasPrice
     },
+    goerli: {
+      url: `https://goerli.infura.io/v3/${INFURA_ID}`,
+      accounts: [OWNER_PRIVATE_KEY],
+      chainId: 5,
+      gasPrice: gasPrice
+    },
     rinkeby: {
       // url: `https://rinkeby.infura.io/v3/${INFURA_ID}`,
       url: `https://rinkeby.nowlive.ro/`,
@@ -85,7 +91,8 @@ module.exports = {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
     // url: "https://api-rinkeby.etherscan.io/",
-    url: "https://api.etherscan.io/",
+    // url: "https://api.etherscan.io/",
+    url: "https://api-goerli.etherscan.io/",
     apiKey: ETHERSCAN_API_KEY,
   },
   solidity: {

@@ -33,17 +33,17 @@ contract NFTToolbox is TestNetERC721, Ownable {
         return string(abi.encodePacked(baseURI(),folder,slash,file,".json"));
     }
 
-    function mint(uint256 _newItemId) public onlyAllowed {
+    function mint(uint256 _newItemId) public {
         require(!_exists(_newItemId), "ERC721: token already exists");
         _mint(msg.sender, _newItemId);
     }
 
-    function mint(uint256 _newItemId, address recipient) public onlyAllowed {
+    function mint(uint256 _newItemId, address recipient) public {
         require(!_exists(_newItemId), "ERC721: token already exists");
         _mint(recipient, _newItemId);
     }
 
-    function batchMint(uint256[] calldata _newItemIds, address recipient) public onlyAllowed {
+    function batchMint(uint256[] calldata _newItemIds, address recipient) public {
         for(uint256 i = 0; i < _newItemIds.length; i++) {
             mint(_newItemIds[i], recipient);
         }
