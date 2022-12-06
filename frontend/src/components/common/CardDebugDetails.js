@@ -121,7 +121,7 @@ const CardDebugDetails = (props) => {
                     return (
                         <div key={'trait-' + i} className="m-0 row">
                             <div className="col-2">Trait {i+1}:</div>
-                            <div className="col-1">{i}</div>
+                            <div className="col-1">{GlobalTraits[trait].id}</div>
                             <div className="col-8">
                                 {GlobalTraits[trait].name}
                             </div>

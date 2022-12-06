@@ -58,9 +58,13 @@ const RequestCards = (props) => {
         // TODO: chunk at 1k requests
 
         const contract = props.helpers.ec;
-        const totalSupply = await contract.totalSupply();
+        const totalSupply = parseInt((await contract.totalSupply()).toString());
+        console.log("getUnownedTokenIds totalSupply", totalSupply);
 
         if (totalSupply > 0) {
+
+            console.log("getUnownedTokenIds totalSupply > 0");
+
             const item_identifiers = [];
 
             for(let i = 0; i < totalSupply; i++) {

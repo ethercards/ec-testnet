@@ -1,23 +1,20 @@
 const dev = {
     DEPLOYED_NTW_NAME: 'rinkeby',
-    DEPLOYED_CHAIN_ID: 4,
-    INFURA_ID: 'a5e79e6ee9a14236b385e47849805596',
+    DEPLOYED_CHAIN_ID: 5,
+    INFURA_ID: 'faa9a13f92b545b198a36965fa6d4c76',
     FORTMATIC_KEY: 'pk_test_DD2BBA8AAA1D4FED',
-    // RPC_URL: 'https://rinkeby.infura.io/v3/0a0bbd3ce4ea4be5ad706514cf2cd8cc',
-    RPC_URL: 'https://rinkeby.nowlive.ro/',
-
+    RPC_URL: 'https://goerli.infura.io/v3/faa9a13f92b545b198a36965fa6d4c76',
     BASE_CID: 'https://ec-serverapp-staging.herokuapp.com/card',
-    BASE_OPENSEA: 'https://testnets.opensea.io/assets/',
-    BASE_ETHERSCAN: 'https://rinkeby.etherscan.io/token/'
+    BASE_OPENSEA: 'https://testnets.opensea.io/assets/goerli/goerli/',
+    BASE_ETHERSCAN: 'https://goerli.etherscan.io/token/'
 };
 
 const prod = {
     DEPLOYED_NTW_NAME: 'mainnet',
     DEPLOYED_CHAIN_ID: 1,
-    INFURA_ID: 'a5e79e6ee9a14236b385e47849805596',
+    INFURA_ID: 'faa9a13f92b545b198a36965fa6d4c76',
     FORTMATIC_KEY: 'pk_live_FBFF1F05F2879F29',
-    RPC_URL: 'https://rinkeby.nowlive.ro/',
-
+    RPC_URL: 'https://goerli.infura.io/v3/faa9a13f92b545b198a36965fa6d4c76',
     BASE_CID: 'https://heroku.ether.cards/card',
     BASE_OPENSEA: 'https://opensea.io/assets/',
     BASE_ETHERSCAN: 'https://etherscan.io/token/'
