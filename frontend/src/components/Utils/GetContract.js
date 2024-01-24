@@ -3,6 +3,7 @@ import AddressesMain from '../../contracts/addresses-1.json';
 import AddressesRinkeby from '../../contracts/addresses-4.json';
 import AddressesGoerli from '../../contracts/addresses-5.json';
 import AddressesLocal from '../../contracts/addresses-1337.json';
+import AddressesSepolia from '../../contracts/addresses-11155111.json';
 import EtherCards from '../../contracts/EtherCards.json';
 import ECRegistryV2 from '../../contracts/ECRegistryV2.json';
 import Zoom2 from '../../contracts/Zoom2.json';
@@ -14,7 +15,8 @@ const addresses = {
     1: { addr: AddressesMain, name: 'Main' },
     4: { addr: AddressesRinkeby, name: 'Rinkeby' },
     5: { addr: AddressesGoerli, name: 'Goerli' },
-    1337: { addr: AddressesLocal, name: 'localhost' }
+    1337: { addr: AddressesLocal, name: 'localhost' },
+    11155111: { addr: AddressesSepolia, name: 'Sepolia' },
 };
 
 export const getContract = async (contractName, provider) => {

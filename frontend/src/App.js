@@ -31,6 +31,7 @@ function App(props) {
 
   useEffect(()=>{
     console.log('app mounted');
+    console.log(config);
     const initApp = async () => {
       setInitDone(false);
       try{
@@ -56,7 +57,8 @@ function App(props) {
                 rpc: {
                         1: RPC_URL,
                         4: RPC_URL,
-                        5: RPC_URL
+                        5: RPC_URL,
+                        11155111: RPC_URL,
                      }
               },
               { walletName: "opera" },

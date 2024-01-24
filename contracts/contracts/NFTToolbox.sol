@@ -15,7 +15,7 @@ contract NFTToolbox is TestNetERC721, Ownable {
     using EnumerableSet for EnumerableSet.AddressSet;
     EnumerableSet.AddressSet controllers;
 
-    constructor() TestNetERC721("RinkebyEC", "REC") {
+    constructor() TestNetERC721("TestEtherCard", "SepEC") {
         setDataFolder("https://ec-serverapp-staging.herokuapp.com/card/");
     }
 

@@ -1,13 +1,24 @@
 const dev = {
-    DEPLOYED_NTW_NAME: 'rinkeby',
-    DEPLOYED_CHAIN_ID: 5,
+    DEPLOYED_NTW_NAME: 'sepolia',
+    DEPLOYED_CHAIN_ID: 11155111,
     INFURA_ID: 'faa9a13f92b545b198a36965fa6d4c76',
     FORTMATIC_KEY: 'pk_test_DD2BBA8AAA1D4FED',
-    RPC_URL: 'https://goerli.infura.io/v3/faa9a13f92b545b198a36965fa6d4c76',
+    RPC_URL: 'https://sepolia.infura.io/v3/faa9a13f92b545b198a36965fa6d4c76',
     BASE_CID: 'https://ec-serverapp-staging.herokuapp.com/card',
-    BASE_OPENSEA: 'https://testnets.opensea.io/assets/goerli/goerli/',
-    BASE_ETHERSCAN: 'https://goerli.etherscan.io/token/'
+    BASE_OPENSEA: 'https://testnets.opensea.io/assets/sepolia/',
+    BASE_ETHERSCAN: 'https://sepolia.etherscan.io/token/'
 };
+
+// const dev = {
+//     DEPLOYED_NTW_NAME: 'rinkeby',
+//     DEPLOYED_CHAIN_ID: 5,
+//     INFURA_ID: 'faa9a13f92b545b198a36965fa6d4c76',
+//     FORTMATIC_KEY: 'pk_test_DD2BBA8AAA1D4FED',
+//     RPC_URL: 'https://goerli.infura.io/v3/faa9a13f92b545b198a36965fa6d4c76',
+//     BASE_CID: 'https://ec-serverapp-staging.herokuapp.com/card',
+//     BASE_OPENSEA: 'https://testnets.opensea.io/assets/goerli/goerli/',
+//     BASE_ETHERSCAN: 'https://goerli.etherscan.io/token/'
+// };
 
 const prod = {
     DEPLOYED_NTW_NAME: 'mainnet',

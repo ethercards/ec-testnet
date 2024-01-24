@@ -20,7 +20,7 @@ async function main() {
     await tx.wait(8);
 
     // npx hardhat verify --network rinkeby --contract contracts/NFTToolbox.sol:NFTToolbox "0xAAD4475343f5150E33d6194270f04e7e5968A2f8"
-
+    // npx hardhat verify --network sepolia --contract contracts/NFTToolbox.sol:NFTToolbox "0xF1D6A8E031740efE05975162e9C6908aA273D593"
     await hre.run("verify:verify", {
         contract: "contracts/NFTToolbox.sol:NFTToolbox",
         address: EC721.address,

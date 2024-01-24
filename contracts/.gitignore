@@ -7,6 +7,7 @@ artifacts/*
 cache/*
 deployed_contracts/*.json
 coverage/*
+typechain/*
 
 # Mac
 .DS_Store

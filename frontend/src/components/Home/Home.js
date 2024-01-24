@@ -341,7 +341,7 @@ const Home = (props) => {
     }
 
     const getEtherscanLink = (address) => {
-        return "https://rinkeby.etherscan.io/address/"+address;
+        return "https://sepolia.etherscan.io/address/"+address;
     }
 
     return (

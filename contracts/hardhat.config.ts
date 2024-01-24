@@ -16,6 +16,9 @@ config();
 const INFURA_ID = process.env.INFURA_API_KEY;
 const OWNER_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
+const ARBITRUM_API_KEY = process.env.ARBITRUM_API_KEY;
+const OPTIMISM_API_KEY = process.env.OPTIMISM_API_KEY;
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -85,7 +88,20 @@ module.exports = {
       accounts: [OWNER_PRIVATE_KEY],
       chainId: 42,
       gasPrice: gasPrice
-    }
+    },
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/${INFURA_ID}`,
+      accounts: [OWNER_PRIVATE_KEY],
+      chainId: 11155111,
+      blockGasLimit: gasLimit,
+      gasPrice: 80000000000, // 80 GWEI
+    },
+    arbitrumSepolia: {
+      url: `https://arbitrum-sepolia.infura.io/v3/714442da76574ddeb9549bc967e3c4e0`,
+      accounts: [OWNER_PRIVATE_KEY],
+      chainId: 421614,
+      gasPrice: 100000000
+    },
   },
   etherscan: {
     // Your API key for Etherscan
@@ -93,7 +109,24 @@ module.exports = {
     // url: "https://api-rinkeby.etherscan.io/",
     // url: "https://api.etherscan.io/",
     url: "https://api-goerli.etherscan.io/",
-    apiKey: ETHERSCAN_API_KEY,
+    apiKey: {
+      mainnet: ETHERSCAN_API_KEY,
+      goerli: ETHERSCAN_API_KEY,
+      polygon: POLYGONSCAN_API_KEY,
+      sepolia: ETHERSCAN_API_KEY,
+      polygonMumbai: POLYGONSCAN_API_KEY,
+      arbitrumSepolia: ARBITRUM_API_KEY,
+    },
+    customChains: [
+      {
+        network: "arbitrumSepolia",
+        chainId: 421614,
+        urls: {
+          apiURL: "https://api-sepolia.arbiscan.io/api",
+          browserURL: "https://sepolia.arbiscan.io/",
+        },
+      },
+    ],
   },
   solidity: {
     version: "0.7.5",
